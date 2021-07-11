@@ -1,5 +1,5 @@
 h1{background-color: rgb(238, 160, 160);
-    color:black;
+    color:src black;
     font: size 24px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;}
@@ -7,18 +7,18 @@ h1{background-color: rgb(238, 160, 160);
 p{text-align: justify;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
-    color: #757575;}
+    color: src #757575;}
 
 ul{text-align: justify;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
-    color: #757575;}
+    color: src #757575;}
 
 ol{text-align: justify;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 18px;
-    color: #757575;}
+    color: src #757575;}
 
-body{background-color:#f3f4f5;}
+body{background-color:src #f3f4f5;}
 
 
