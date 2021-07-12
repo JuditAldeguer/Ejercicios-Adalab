@@ -2,6 +2,6 @@
 #two{color:royalblue;}
 #three{color:rgb(79, 180, 79);}
 #four{color:rgb(226, 224, 94);}
-
+.links{color: red;}
 .link:hover{color:seashell;
     background-color:rgb(201, 21, 156)}
