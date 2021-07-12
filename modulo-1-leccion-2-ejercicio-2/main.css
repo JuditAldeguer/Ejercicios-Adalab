@@ -10,3 +10,13 @@ footer{text-align: right;
 p{text-align: justify;}
 #logos{text-align: center;}
 #volver{size: 2px;}
+.button{
+    border: 1px solid #8b502e; /*anchura, estilo y color borde*/
+    padding: 2px; /*espacio alrededor texto*/
+    background-color: #794b06; /*color botón*/
+    color: #ffffff; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    text-transform: capitalize; /*capitalización texto*/
+    font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+    border-radius: 50px; /*bordes redondos*/
+    }
