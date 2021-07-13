@@ -1,0 +1,34 @@
+/*Ejercicio 2----------------------------------------------------------------------------------*/
+body {
+  background-color: khaki;
+  border-style: double;
+}
+section {
+  border-style: solid;
+  background-color: lightcoral;
+}
+h2 {
+    background-color: greenyellow;
+    border-style: dotted;
+}
+/*--------------error------------------------*/
+.section2 {
+  background-color: lightblue;
+}
+div {
+  border-style: solid;
+  background-color: green;
+}
+.primero {
+  display: block;
+  background-color: indianred;
+}
+.segundo {
+  display: inline;
+  background-color: rgb(115, 205, 92);
+}
+.tercero {
+  display: inline;
+  background-color: rgb(201, 123, 34);
+}
+/*Ejercio 3*-------------------------------------------------------------------------------------/
