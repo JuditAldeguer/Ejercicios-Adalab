@@ -1,0 +1,41 @@
+h1 {
+  text-align: center;
+  background-color: rgb(175, 133, 69);
+  color: cornsilk;
+}
+h2 {
+  text-align: center;
+}
+h3 {
+  text-shadow: brown;
+}
+body {
+  background-color: rgb(221, 216, 145);
+}
+footer {
+  text-align: right;
+  color: rgb(4, 115, 117);
+  font-family: "Courier New", Courier, monospace;
+}
+p {
+  text-align: justify;
+}
+#logos {
+  text-align: center;
+}
+#volver {
+  size: 2px;
+}
+.button {
+  border: 1px solid #8b502e; /*anchura, estilo y color borde*/
+  padding: 2px; /*espacio alrededor texto*/
+  background-color: #794b06; /*color botón*/
+  color: #ffffff; /*color texto*/
+  text-decoration: none; /*decoración texto*/
+  text-transform: capitalize; /*capitalización texto*/
+  font-family: "Helvetica", sans-serif; /*tipografía texto*/
+  border-radius: 50px; /*bordes redondos*/
+}
+ol {
+  list-style-type: none;
+}
