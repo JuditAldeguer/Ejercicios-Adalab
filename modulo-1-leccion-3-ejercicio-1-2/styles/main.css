@@ -13,22 +13,32 @@ h2 {
 }
 /*--------------error------------------------*/
 .section2 {
-  background-color: lightblue;
+  background-color: var(--brand-color)+1;
 }
-div {
-  border-style: solid;
-  background-color: green;
-}
+
 .primero {
   display: block;
   background-color: indianred;
+  border-style: groove;
+  width:50px;
+  height:30px;
 }
 .segundo {
   display: inline;
+  width: 70px;
+  height: 60px;
   background-color: rgb(115, 205, 92);
 }
 .tercero {
   display: inline;
   background-color: rgb(201, 123, 34);
+  width:90px;
+  height:60px;
 }
+.cuarto{
+    background-color: teal;
+    text-align: justify;
+    
+}
+
 /*Ejercio 3*-------------------------------------------------------------------------------------/
