@@ -1,0 +1,31 @@
+body {
+  background-color: burlywood;
+}
+header {
+  background-color: cadetblue;
+}
+p {
+  width: 390px;
+  height: 100px;
+  overflow: scroll;
+}
+div {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  border: 2px solid rgb(106, 211, 64);
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+section {
+  width: 400px;
+  background-color: royalblue;
+  border: 2px solid rgb(38, 71, 25);
+  flex-grow: 1;
+}
+.destacada {
+  background-color: red;
+  flex-grow: 2; /*no funciona*/
+  /* ------order: -1;*/
+}
