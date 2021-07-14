@@ -1,0 +1,22 @@
+body {
+  background-color: greenyellow;
+}
+.header {
+  background-color: rgb(196, 84, 84);
+  size: 100px;
+}
+
+nav.menu {
+  box-sizing: border-box;
+  border: 2px solid rgb(187, 34, 128);
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav p {
+  display: flexbox;
+  padding-right: 5px;
+}
