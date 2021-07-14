@@ -24,8 +24,9 @@ h2 {
   height:30px;
 }
 .segundo {
-  display: inline;
-  width: 70px;
+  display: inline-block;
+  overflow: scroll;
+  width: 200px;
   height: 60px;
   background-color: rgb(115, 205, 92);
 }
