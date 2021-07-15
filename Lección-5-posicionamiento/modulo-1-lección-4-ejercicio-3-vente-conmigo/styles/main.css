@@ -1,0 +1,11 @@
+header {
+  background-color: violet;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+main {
+  position: relative;
+  top: 70px;
+}
