@@ -1,0 +1,33 @@
+* {
+  margin: 2px;
+}
+body {
+  border: lightcoral 5px solid;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.box {
+  border: black 2px solid;
+  order: 0;
+}
+.header {
+  background-color: orange;
+  min-width: 99.5%;
+}
+.main {
+  background-color: rgb(76, 76, 207);
+}
+.footer {
+  background-color: rgb(82, 143, 82);
+  min-width: 99.5%;
+  order: 2;
+}
+.aside {
+}
+.aside1 {
+  background-color: yellow;
+}
+.aside2 {
+  background-color: rgb(189, 78, 152);
+}
