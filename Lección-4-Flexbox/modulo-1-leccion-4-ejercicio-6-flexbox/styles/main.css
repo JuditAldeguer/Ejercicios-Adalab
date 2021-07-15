@@ -1,8 +1,10 @@
 * {
   margin: 2px;
 }
-:root {altura: height: 20px} /*pendiente*/
-body {    
+:root {
+  --altura: 100px;
+}
+body {
   border: lightcoral 5px solid;
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +26,7 @@ body {
   max-width: 80%;
   flex-grow: 2;
   order: 1;
+  height: var(--altura);
 }
 .footer {
   background-color: rgb(82, 143, 82);
@@ -32,7 +35,7 @@ body {
 }
 .aside {
   flex-grow: 1;
-  height: var(altura);
+  height: var(--altura);
 }
 .aside1 {
   background-color: yellow;
