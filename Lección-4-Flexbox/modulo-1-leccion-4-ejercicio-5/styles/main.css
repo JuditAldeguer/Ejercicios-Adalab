@@ -1,0 +1,25 @@
+* {
+  margin: 0px;
+}
+body {
+  box-sizing: border-box; /*error -- los quiero juntos pero no me da opcion*/
+  border: red 2px solid;
+  display: flex;
+  flex-direction: column;
+}
+.box {
+  flex-grow: 1; /*da error------------*/
+}
+.header {
+  background-color: rgb(233, 203, 203);
+}
+.main {
+  background-color: grey;
+  flex-grow: 2; /*da error------------*/
+  min-height: 90vh;
+}
+.footer {
+  background-color: rgb(184, 167, 19);
+  order: 2;
+  min-height: 10vh;
+}
