@@ -1,0 +1,15 @@
+.news {
+  margin: 2em auto 0;
+  width: 400px;
+  border: 1px solid red;
+  padding: 1em;
+}
+.news__image {
+  width: 100%;
+}
+.news__content {
+  border: 1px dashed pink;
+  max-height: 222px;
+  padding: 0 0.5em;
+  overflow-y: auto;
+}
