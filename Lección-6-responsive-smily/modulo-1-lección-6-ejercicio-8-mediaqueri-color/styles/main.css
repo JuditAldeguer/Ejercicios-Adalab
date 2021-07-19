@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+}
+.box {
+  background: red;
+  width: 35vw;
+  height: 35vh;
+}
+@media all and (min-width: 480px) {
+  .box {
+    background: yellow;
+  }
+}
+@media all and (min-width: 769px) {
+  .box {
+    background: green;
+  }
+}
