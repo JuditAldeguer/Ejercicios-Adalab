@@ -1,0 +1,27 @@
+.container {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "header header" "main aside" "footer footer"; /*aqui*/
+  background: pink;
+  grid-auto-columns: 50px;
+  grid-gap: 10px;
+}
+.item {
+  background: deeppink;
+}
+.header {
+  grid-area: header;
+}
+.main {
+  grid-area: main;
+}
+.aside {
+  grid-area: aside;
+}
+.footer {
+  grid-area: footer;
+}
