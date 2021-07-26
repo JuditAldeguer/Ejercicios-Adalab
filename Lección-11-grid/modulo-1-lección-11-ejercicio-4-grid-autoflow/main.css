@@ -1,0 +1,16 @@
+.container {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  background: pink;
+  grid-template-columns: repeat(6, 20px);
+  grid-template-rows: 150px;
+  grid-auto-flow: row; /*aqui*/
+  grid-auto-columns: 50px;
+  grid-gap: 10px;
+  width: 170px;
+}
+.item {
+  background: deeppink;
+}
