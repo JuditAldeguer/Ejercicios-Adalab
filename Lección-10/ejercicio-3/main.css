@@ -1,0 +1,38 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  padding: 10px;
+}
+.container {
+  width: 50vw;
+  border: 2px solid grey;
+  background-color: rgba(101, 114, 128, 0.582);
+  box-shadow: 6px 6px 6px 6px rgb(173, 178, 221);
+  box-sizing: border-box;
+  padding: 4px;
+}
+fieldset {
+  border: none;
+  width: 90%;
+}
+.name {
+  display: block;
+}
+.half {
+  width: 50%; /* da error - no ocupa cada uno la mitad de su contenedor "name" para hacer que ocupe toda la linea del fieldset*/
+}
+
+.full {
+  width: 100%;
+}
+.button {
+  background-color: green;
+  color: white;
+  font-weight: 900;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
