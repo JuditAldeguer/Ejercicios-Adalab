@@ -1,0 +1,18 @@
+.button {
+  border: solid 2px rgba(58, 24, 207, 0.308);
+  background-color: rgb(156, 185, 51);
+  border-radius: 15px;
+  color: white;
+  width: fit-content;
+  display: inline-block;
+  padding: 5px;
+  margin: 40px;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.disactivated {
+  opacity: 0.5;
+}
