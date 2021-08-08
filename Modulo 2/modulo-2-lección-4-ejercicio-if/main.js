@@ -11,3 +11,8 @@ if (age > 30) {
 } else {
   console.log('Eres un niño entre 0 y 9 años'); //Esta línea se ejecuta solo si se NO cumplen ninguna de las condiciones anteriores
 }
+
+
+//Operador ternario
+const theme = 'hallowen';
+const fontColor = theme === 'hallowen' ? '#ff5722' : '#000';
