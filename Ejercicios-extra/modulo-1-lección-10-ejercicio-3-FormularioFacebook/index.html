@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <title>Formulario Facebook</title>
+  </head>
+  <body>
+    <h1>Create an account</h1>
+    <p>It's free and always will be.</p>
+    <form action="/" method="POST" class="container">
+      <fieldset class="name">
+        <label class="namefull">
+          <input
+            class="half"
+            id="name"
+            name="name"
+            placeholder="First name"
+            type="text"
+          />
+        </label>
+        <label class="namefull">
+          <input
+            class="half"
+            id="surname"
+            name="surname"
+            placeholder="Surname"
+            type="text"
+          />
+        </label>
+      </fieldset>
+      <fieldset>
+        <label>
+          <input
+            class="full"
+            id="contact"
+            name="contact"
+            placeholder="Email or mobile number"
+            type="text"
+          />
+        </label>
+        <label>
+          <input
+            class="full"
+            id="re-contact"
+            name="re-contact"
+            placeholder="Re-enter email or mobile number"
+            type="text"
+          />
+        </label>
+        <label>
+          <input
+            class="full"
+            id="password"
+            name="password"
+            placeholder="New password"
+            type="text"
+          />
+        </label>
+        <label>
+          Birthday
+          <select id="day" name="day">
+            <option selected disabled>Day</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+          <select id="month" name="month">
+            <option selected disabled>Month</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+          <select id="year" name="year">
+            <option selected disabled>Year</option>
+            <option value="1">1900-1990</option>
+            <option value="2">1990-2000</option>
+            <option value="3">2000-2005</option>
+            <option value="4">too young</option>
+          </select>
+          <small>Why do I have to provide my date of birth?</small>
+        </label>
+      </fieldset>
+      <fieldset>
+        <label>
+          <input type="radio" id="genre" name="genre" value="Female" />Female
+        </label>
+        <label>
+          <input type="radio" id="genre" name="genre" value="Male" />Male
+        </label>
+      </fieldset>
+      <input class="button" type="submit" value="Create an account" />
+    </form>
+  </body>
+</html>
