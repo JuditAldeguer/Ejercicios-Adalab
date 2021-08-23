@@ -23,9 +23,13 @@ function handleClicView(event) {
   if (event.currentTarget.value === 'list') {
     boardData.classList.remove('tableview');
     boardData.classList.add('listview');
+    buttonTableView.classList.remove('selected');
+    buttonListView.classList.add('selected');
   } else {
     boardData.classList.remove('listview');
     boardData.classList.add('tableview');
+    buttonTableView.classList.add('selected');
+    buttonListView.classList.remove('selected');
   }
 }
 buttonListView.addEventListener('click', handleClicView);
@@ -42,7 +46,6 @@ function handleClickBtn(event) {
 formNewLineBtn.addEventListener('click', handleClickBtn);
 
 //Funcion nueva linea en tabla
-
 let htmlLine = `<li class="data__listitem">
     <article class="data__item">
       <p class="item__url">
