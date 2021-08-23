@@ -14,7 +14,7 @@ fieldset {
 
 button,
 select,
-input[type="checkbox"] {
+input[type='checkbox'] {
   cursor: pointer;
 }
 
@@ -28,14 +28,14 @@ input[type="checkbox"] {
   --color-red: #c33149; /* French raspberry */
   /* Generated with coolors.co <https://coolors.co/089d8d-648de5-e8e9f3-db5a42-63585e> */
 
-  --font-family-normal: "Rubik", sans-serif;
+  --font-family-normal: 'Rubik', sans-serif;
   --font-family-mono: monospace;
 
   --font-normal: normal 14px/20px var(--font-family-normal);
   --font-links: normal 12px/18px var(--font-family-mono);
 
   --fontsize-header: 24px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
 
   font-size: 14px;
   font: var(--font-normal);
@@ -49,7 +49,7 @@ input[type="checkbox"] {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 48px auto 1fr 2.25em;
-  grid-template-areas: "header" "dropdown" "main" "footer";
+  grid-template-areas: 'header' 'dropdown' 'main' 'footer';
   background-color: var(--color-white);
   /*
   background: -webkit-linear-gradient(top, var(--color-white), white);
@@ -83,21 +83,23 @@ input[type="checkbox"] {
   border-radius: 3px;
 }
 
+.menudropdown.collapsed {
+  height: 0;
+  border-bottom: 0;
+
+  /* Collapse transition */
+  transition: height 0.3s ease;
+}
+
 .menudropdown {
   grid-area: dropdown;
   height: 220px;
   margin: 10px;
   overflow: hidden;
   border-bottom: solid 1px var(--color-dark-white);
+
   /* Show transition */
   transition: height 0.6s ease;
-}
-
-.collapsed {
-  height: 0;
-  border-bottom: 0;
-  /* Collapse transition */
-  transition: height 0.3s ease;
 }
 
 .menu__data-layout {
@@ -303,7 +305,7 @@ input[type="checkbox"] {
   .page {
     grid-template-columns: auto 1fr;
     grid-template-rows: 48px 1fr 48px;
-    grid-template-areas: "header header" "dropdown main" "footer footer";
+    grid-template-areas: 'header header' 'dropdown main' 'footer footer';
   }
 
   .menudropdown {

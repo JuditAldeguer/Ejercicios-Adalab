@@ -1,36 +1,48 @@
-"use strict";
+'use strict';
 
 //Menu desplegable
-const hamburgerMenu = document.querySelector(".js_header__menu");
-const menuDropDown = document.querySelector(".js_menuDropDown");
+const hamburgerMenu = document.querySelector('.js_header__menu');
+const menuDropDown = document.querySelector('.js_menuDropDown');
 function handleClickMenu(event) {
   event.preventDefault();
-  if (menuDropDown.classList.contains("collapsed")) {
-    menuDropDown.classList.remove("collapsed");
+  if (menuDropDown.classList.contains('collapsed')) {
+    menuDropDown.classList.remove('collapsed');
   } else {
-    menuDropDown.classList.add("collapsed");
+    menuDropDown.classList.add('collapsed');
   }
 }
+hamburgerMenu.addEventListener('click', handleClickMenu);
 
 //Cambiar de vista targetas / tabla
-const boardData = document.querySelector(".js_boardData");
-const buttonListView = document.querySelector(".js_list_view");
-const buttonTableView = document.querySelector(".js_table_view");
+const boardData = document.querySelector('.js_boardData');
+const buttonListView = document.querySelector('.js_list_view');
+const buttonTableView = document.querySelector('.js_table_view');
 
 function handleClicView(event) {
   event.preventDefault();
-  if (event.currentTarget.value === "list") {
-    boardData.classList.remove("tableview");
-    boardData.classList.add("listview");
+  if (event.currentTarget.value === 'list') {
+    boardData.classList.remove('tableview');
+    boardData.classList.add('listview');
   } else {
-    boardData.classList.remove("listview");
-    boardData.classList.add("tableview");
+    boardData.classList.remove('listview');
+    boardData.classList.add('tableview');
   }
 }
+buttonListView.addEventListener('click', handleClicView);
+buttonTableView.addEventListener('click', handleClicView);
+
+//Añadir sección para nueva linea
+const formNewLineBtn = document.querySelector('.js_btnLine');
+const formNewLine = document.querySelector('.data-actions__add');
+function handleClickBtn(event) {
+  event.preventDefault();
+  formNewLine.classList.toggle('hidden');
+  formNewLineBtn.classList.toggle('hidden');
+}
+formNewLineBtn.addEventListener('click', handleClickBtn);
 
 //Funcion nueva linea en tabla
-const formNewLineBtn = document.querySelector(".js_btnList");
-const formNewLine = document.querySelector(".data-actions__add");
+
 let htmlLine = `<li class="data__listitem">
     <article class="data__item">
       <p class="item__url">
@@ -44,18 +56,6 @@ let htmlLine = `<li class="data__listitem">
       <p class="item__desc">fffff</p>
       <ul class="item__tags">`;
 //cambiar fffff por ${}
-
-function handleClickBtn(event) {
-  event.preventDefault();
-  formNewLine.classList.toggle("data-actions__add");
-  formNewLine.classList.toggle("data-actions__button-add");
-}
-
-//Listener
-hamburgerMenu.addEventListener("click", handleClickMenu);
-buttonListView.addEventListener("click", handleClicView);
-buttonTableView.addEventListener("click", handleClicView);
-formNewLineBtn.addEventListener("click", handleClickBtn);
 
 //Listener Pendientes
 //si etiqueta está vacia --> display none - si etiqueta está llena --> ok

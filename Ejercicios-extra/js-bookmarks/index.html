@@ -40,6 +40,7 @@
           </select>
         </label>
       </fieldset>
+      <!-- Visualizacion -->
       <fieldset class="menu__data-layout">
         <h2 class="menu__title">Visualización</h2>
         <button class="data-layout__button js_list_view" title="Mostrar los bookmarks organizados como una de lista de tarjetas" value="list"><i class="fas fa-th"></i><span class="data-layout__button--text">Vista tarjetas</span></button>
@@ -51,7 +52,7 @@
       <section class="data tableview js_boardData">
         <div class="data__header">
           <div>URL</div>
-          <div>Lección act</div>
+          <div>Leído</div>
           <div>Despcripción</div>
           <div>Etiquetas</div>
         </div>
@@ -101,12 +102,13 @@
           </li>
         </ul>
         <div class="data__actions">
+          <!-- Nueva linea -->
           <section class="data-actions__add hidden">
-            <button class="js_btnList data-actions__button-add" title="Crear un nuevo bookmark"><i class="fas fa-plus data-actions__button-add--icon"></i><span class="data-actions__button-add--label">Nueva</span></button>
+            <button class="js_btnLine data-actions__button-add" title="Crear un nuevo bookmark"><i class="fas fa-plus data-actions__button-add--icon"></i> <span class="data-actions__button-add--label">Nueva</span></button>
             <form class=" js_from-display data__item data-actions__data">
               <h3 class="data-actions__title">Datos del nuevo bookmark:</h3>
               <input class="data-actions__input" type="text" name="new_dir" id="new_dir" placeholder="Nueva URL">
-              <label class="data-actions__label">Esta lección <input class="data-actions__input" type="checkbox" name="new_seen" id="new_seen"></label>
+              <label class="data-actions__label">Leído <input class="data-actions__input" type="checkbox" name="new_seen" id="new_seen"></label>
               <input class="data-actions__input" type="text" name="new_desc" id="new_desc" placeholder="Descripción">
               <input class="data-actions__input" type="text" name="new_tags" id="new_tags" placeholder="Etiquetas (separadas por comas)">
               <fieldset class="data-actions__add--buttons">
