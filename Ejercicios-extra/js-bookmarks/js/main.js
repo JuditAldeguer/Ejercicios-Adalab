@@ -88,7 +88,7 @@ function htmlLineInput() {
   `;
   dataList.innerHTML += htmlLineInput;
 }
-
+//pendiente conseguir que se muestren tantos tags como palabras en array[3].innerhtml
 function newLineAdded(event) {
   event.preventDefault();
   console.log(inputArray);
