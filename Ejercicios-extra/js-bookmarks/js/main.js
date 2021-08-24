@@ -13,7 +13,6 @@ const dataList = document.querySelector('.data__list');
 const formBtnAccept = document.querySelector('.accept');
 const formBtnCancel = document.querySelector('.cancel');
 const inputArray = document.querySelectorAll('.data-actions__input');
-const inputArrayText = inputArray.value;
 
 //Menu desplegable
 function handleClickMenu(event) {
@@ -55,32 +54,6 @@ formNewLineBtn.addEventListener('click', handleClickBtn);
 formBtnCancel.addEventListener('click', handleClickBtn);
 
 //Funcion nueva linea en tabla
-const bmkData_1 = {};
-bmkData_1.url = 'https://adalab.es/';
-bmkData_1.desc = 'Home de Adalab';
-bmkData_1.seen = false;
-bmkData_1.tags_1 = '<li class="item__tag">HTML</li>';
-bmkData_1.tags_2 = '<li class="item__tag">CSS</li>';
-
-let htmlLine = `
-  <li class="data__listitem">
-    <article class="data__item">
-      <p class="item__url">
-        <a href="${bmkData_1.url}" target="_blank" rel="noopener noreferrer">
-        ${bmkData_1.url}
-        </a>
-      </p>
-      <p class="item__seen">
-        <input type="checkbox" ${bmkData_1.seen} name="item_imp_2" id="item_imp_2">
-      </p>
-      <p class="item__desc">${bmkData_1.desc}</p>
-      <ul class="item__tags">
-      ${bmkData_1.tags_1} ${bmkData_1.tags_2}
-      </ul>
-    </article>
-  </li>
-  `;
-
 function checking() {
   debugger;
   let interactionCheck = '';
@@ -107,8 +80,8 @@ function htmlLineInput() {
         <input type="checkbox" ${checking()} name="item_imp_2" id="item_imp_2">
       </p>
       <p class="item__desc">${inputArray[2].value}</p>
-      <ul class="item__tags item__tag">
-      ${inputArray[3].value}
+      <ul class="item__tags">
+        <li class="item__tag">${inputArray[3].value}</li>
       </ul>
     </article>
   </li>
@@ -118,7 +91,6 @@ function htmlLineInput() {
 
 function newLineAdded(event) {
   event.preventDefault();
-  dataList.innerHTML += htmlLine;
   console.log(inputArray);
   htmlLineInput();
 }
