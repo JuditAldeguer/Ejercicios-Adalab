@@ -9,9 +9,11 @@ const buttonListView = document.querySelector('.js_list_view');
 const buttonTableView = document.querySelector('.js_table_view');
 const formNewLineBtn = document.querySelector('.js_btnLine');
 const formNewLine = document.querySelector('.data-actions__add');
-const inputArray = document.querySelector('input');
 const dataList = document.querySelector('.data__list');
 const formBtnAccept = document.querySelector('.accept');
+const formBtnCancel = document.querySelector('.cancel');
+const inputArray = document.querySelectorAll('.data-actions__input');
+const inputArrayText = inputArray.value;
 
 //Menu desplegable
 function handleClickMenu(event) {
@@ -49,6 +51,8 @@ function handleClickBtn(event) {
   formNewLineBtn.classList.toggle('hidden');
 }
 formNewLineBtn.addEventListener('click', handleClickBtn);
+//Cerrar sección con Cancelar
+formBtnCancel.addEventListener('click', handleClickBtn);
 
 //Funcion nueva linea en tabla
 const bmkData_1 = {};
@@ -77,10 +81,46 @@ let htmlLine = `
   </li>
   `;
 
-function newLineAdded(event) {
+function checking() {
   debugger;
+  let interactionCheck = '';
+  if (inputArray[1].checked === true) {
+    interactionCheck = 'checked';
+  } else if (inputArray[1].checked === false) {
+    interactionCheck = '';
+  }
+  return interactionCheck;
+}
+function htmlLineInput() {
+  debugger;
+  let htmlLineInput = `
+  <li class="data__listitem">
+    <article class="data__item">
+      <p class="item__url">
+        <a href="${
+          inputArray[0].value
+        }" target="_blank" rel="noopener noreferrer">
+        ${inputArray[0].value}
+        </a>
+      </p>
+      <p class="item__seen">
+        <input type="checkbox" ${checking()} name="item_imp_2" id="item_imp_2">
+      </p>
+      <p class="item__desc">${inputArray[2].value}</p>
+      <ul class="item__tags item__tag">
+      ${inputArray[3].value}
+      </ul>
+    </article>
+  </li>
+  `;
+  dataList.innerHTML += htmlLineInput;
+}
+
+function newLineAdded(event) {
   event.preventDefault();
   dataList.innerHTML += htmlLine;
+  console.log(inputArray);
+  htmlLineInput();
 }
 formBtnAccept.addEventListener('click', newLineAdded);
 
@@ -88,30 +128,3 @@ formBtnAccept.addEventListener('click', newLineAdded);
 //si etiqueta está vacia --> display none - si etiqueta está llena --> ok
 // Lección 2.3	ejercicio 1 (condicionales)
 // avatar por defecto
-const DEFAULT_AVATAR = 'http://placehold.it/300x300';
-// avatar que eligió el usuario al registrarse
-// let userAvatar = 'http://www.fillmurray.com/300/300'; -> parte 1 del ejercicio
-let userAvatar = '';
-/*----------------------------------------------------------*
- *   Añadir la imagen userAvatar a la etiqueta de HTML img   *
- *----------------------------------------------------------*/
-// crear constante que hace referencia a la imagen de avatar del HTML
-const imagen = document.querySelector('.user__avatar');
-// Cambiar el valor del atributo "src" del avatarImg al valor de userAvatar, que tiene la imagen de Bill Murray
-// avatarImg.setAttribute("src", userAvatar); --> parte 1 del ejercicio
-imagen.src = userAvatar;
-/*----------------------------------------------------------*
- *            Mostrar una imagen de usuario SI o SI          *
- *----------------------------------------------------------*/
-// Si tenemos el avatar del usuario se muestre este
-// Si no tenemos datos del avatar del usuario, se muestre el avatar por defecto
-imagen.setAttribute('src', userAvatar || DEFAULT_AVATAR);
-// ejemplo
-if (userAvatar === '') {
-  imagen.src = DEFAULT_AVATAR;
-} else {
-  imagen.src = userAvatar;
-}
-
-// display seccion crear nueva linea
-//crear linea
