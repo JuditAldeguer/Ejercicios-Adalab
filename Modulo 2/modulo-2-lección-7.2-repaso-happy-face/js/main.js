@@ -43,24 +43,25 @@ function numbColor() {
     result.classList.remove('par');
   }
 }
-
 function getRandomIntInclusive(min, max) {
+  //The maximum is inclusive and the minimum is inclusive.
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive.
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
 function getRandomInt(min, max) {
+  //The maximum is exclusive and the minimum is inclusive.
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive.
+  return Math.floor(Math.random() * (max - min) + min);
 }
-
 function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min; //The maximum is exclusive and the minimum is inclusive.Puede contener decimales.
+  //The maximum is exclusive and the minimum is inclusive.Puede contener decimales.
+  return Math.random() * (max - min) + min;
 }
 function getRandom() {
-  return Math.random(); //The 1 is exclusive and the 0 is inclusive. Puede contener decimales.
+  //The 1 is exclusive and the 0 is inclusive. Puede contener decimales.
+  return Math.random();
 }
 
 //Listener
