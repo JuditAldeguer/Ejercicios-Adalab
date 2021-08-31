@@ -58,9 +58,9 @@ function checking() {
   debugger;
   let interactionCheck = '';
   if (inputArray[1].checked === true) {
-    interactionCheck = 'checked';
+    interactionCheck = '"checked" title="Enlace leído"';
   } else if (inputArray[1].checked === false) {
-    interactionCheck = '';
+    interactionCheck = 'title="Por leer"';
   }
   return interactionCheck;
 }
