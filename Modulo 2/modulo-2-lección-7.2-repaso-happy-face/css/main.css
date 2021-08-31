@@ -5,17 +5,8 @@ body {
   justify-content: center;
   align-items: center;
   background: #ffcc00;
-}
-.happy {
-  background: #ffcc00;
-}
-.sad {
-  background-color: rgb(128, 128, 241);
-}
-.mood {
   text-align: center;
 }
-
 .result {
   font-size: 80px;
   font-weight: bolder;
@@ -26,4 +17,18 @@ body {
   padding: 1px 5px 1px 5px;
   height: 21px;
   width: 58px;
+}
+
+.happy {
+  background: #ffcc00;
+}
+.sad {
+  background-color: rgb(128, 128, 241);
+}
+
+.impar {
+  border: 2px solid #ff9900;
+}
+.par {
+  border: 2px solid #1724d3;
 }

@@ -7,23 +7,41 @@ const clickedBtn = document.querySelector('.select');
 const body = document.querySelector('body');
 
 //Funcion
-function showResult(event) {
+function handleUpdateBtnResult(event) {
   event.preventDefault();
+  debugger;
   console.log(event.currentTarget);
+  updateFace();
+  numbColor();
+}
+
+function updateFace() {
   if (clickedBtn.value === ':(') {
     body.classList.add('sad');
     body.classList.remove('happy');
-    result.innerHTML = ':(';
+    result.innerHTML = clickedBtn.value;
   } else {
-    body.classList.remove(':)');
+    body.classList.remove('sad');
     body.classList.add('happy');
     result.innerHTML = clickedBtn.value;
   }
+}
 
-  console.log(getRandomIntInclusive(1, 5));
+function numbColor() {
+  console.log(getRandomIntInclusive(0, 100));
   console.log(getRandomInt(1, 5));
   console.log(getRandomArbitrary(1, 5));
   console.log(getRandom());
+  const randomNumb = Math.round(Math.random() * 100); // JS ya tiene una funcion Math.random que crea aleatorios del 0-1. Esto se multiplica por 100 y se aredondea.
+  console.log(randomNumb);
+  const restNumb = randomNumb % 2;
+  if (restNumb === 0) {
+    result.classList.add('par');
+    result.classList.remove('impar');
+  } else {
+    result.classList.add('impar');
+    result.classList.remove('par');
+  }
 }
 
 function getRandomIntInclusive(min, max) {
@@ -46,4 +64,4 @@ function getRandom() {
 }
 
 //Listener
-updateBtn.addEventListener('click', showResult);
+updateBtn.addEventListener('click', handleUpdateBtnResult);
