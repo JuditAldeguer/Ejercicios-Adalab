@@ -3,21 +3,21 @@
 //variables
 const updateBtn = document.querySelector('.update');
 const result = document.querySelector('.result');
-const selectBtn = document.querySelector('.select');
+const clickedBtn = document.querySelector('.select');
 const body = document.querySelector('body');
 
 //Funcion
 function showResult(event) {
+  event.preventDefault();
   console.log(event.currentTarget);
-  const clickedBtn = document.querySelector('.select');
-  if (clickedBtn.value === 'sad') {
+  if (clickedBtn.value === ':(') {
     body.classList.add('sad');
     body.classList.remove('happy');
     result.innerHTML = ':(';
   } else {
-    body.classList.remove('sad');
+    body.classList.remove(':)');
     body.classList.add('happy');
-    result.innerHTML = ':)';
+    result.innerHTML = clickedBtn.value;
   }
 
   console.log(getRandomIntInclusive(1, 5));
