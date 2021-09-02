@@ -64,3 +64,27 @@
 //   groceries.push(newItem);
 // }
 // console.log(groceries); // ['Eggs', 'Milk', 'Beer'] porque indexOf ha devuelto -1
+
+//-------------------------------------------------------------------------------
+//Arrays anidados
+// const coordinates = [
+//   [4, 3],
+//   [9, 2],
+//   [2, 6],
+// ];
+// const firstcoordinate = coordinates[1];
+// console.log(firstcoordinate); // (2)[9,2] - De las coordenadas obtenemos el segundo valor
+// const x = firstcoordinate[0];
+// console.log(x); // 9 - De la primera coordenada obtenemos el primer valor
+// const firstElemX = coordinates[1][0];
+// console.log(firstElemX); // 9 - Es lo mismo q antes en 1 solo paso
+
+//Modificar arrays anidados
+// const coordinates = [
+//   [4, 3],
+//   [9, 2],
+//   [2, 6],
+// ];
+// console.log(coordinates); //coordinates = [ [4,3],  [9,2], [2,6] ];
+// coordinates[1][0] = 8;
+// console.log(coordinates); //coordinates = [ [4,3],  [8,2], [2,6] ];
