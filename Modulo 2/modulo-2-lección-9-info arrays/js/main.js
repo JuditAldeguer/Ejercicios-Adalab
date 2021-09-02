@@ -88,3 +88,18 @@
 // console.log(coordinates); //coordinates = [ [4,3],  [9,2], [2,6] ];
 // coordinates[1][0] = 8;
 // console.log(coordinates); //coordinates = [ [4,3],  [8,2], [2,6] ];
+
+//Recorrer array
+const schedule = [
+  ['Kahoot', 'Pair programming'],
+  ['Kahoot', 'Project'],
+  ['Pair programming', 'Kahoot', 'Meetings', 'Food'],
+  ['Agile', 'Interviews'],
+  ['Project', 'Beers'],
+];
+
+for (let day = 0; day < schedule.length; day += 1) {
+  for (let hour = 0; hour < schedule[day].length; hour += 1) {
+    console.log(`On day ${day} at hour ${hour} we have ${schedule[day][hour]}`);
+  }
+}
