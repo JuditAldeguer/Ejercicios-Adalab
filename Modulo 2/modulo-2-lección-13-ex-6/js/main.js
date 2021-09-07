@@ -9,4 +9,4 @@ const users = [
 ];
 
 const usersAcces = users.filter((user) => user.pin % 2 === 0);
-console.log(usersAcces);
+console.log(`Estos usuarios tienen un pin par ${usersAcces}`);
