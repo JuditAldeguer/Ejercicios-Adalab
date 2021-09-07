@@ -61,12 +61,12 @@ const times = [56, 9, 45, 28, 35];
 // });
 // console.log(names); //["Susana", "Rocío", "María", "Lucía", "Inmaculada"]
 
-//Recorriendo las propiedades de un objeto
-const book = {
-  title: 'Harry Potter and the Deathly Hallows',
-  ds_title: 'Harry Potter 7',
-  author: 'J. K. Rowling',
-  ds_author: 'Rowling',
-};
-const keys = Object.keys(book);
-console.log(keys); //['title', 'ds_title', 'author', 'ds_author']
+// //Recorriendo las propiedades de un objeto
+// const book = {
+//   title: 'Harry Potter and the Deathly Hallows',
+//   ds_title: 'Harry Potter 7',
+//   author: 'J. K. Rowling',
+//   ds_author: 'Rowling',
+// };
+// const keys = Object.keys(book);
+// console.log(keys); //['title', 'ds_title', 'author', 'ds_author']
