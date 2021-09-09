@@ -1,0 +1,15 @@
+.hidden {
+  display: none;
+}
+.inline {
+  border: 2px black solid;
+  display: inline-block;
+  width: fit-content;
+}
+.inline button {
+  display: inline;
+  margin: 0 2em;
+}
+.inline p {
+  display: inline;
+}
