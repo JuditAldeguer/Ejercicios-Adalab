@@ -27,4 +27,5 @@ fetch('https://api.github.com/repositories?since=abcds') //da error porque el pa
     return response.json();
   })
   .then((data) => console.log('success', data))
-  .catch((err) => console.log('error', err));
+  .catch((err) => console.log('error', err)); // muestra error en consola con su respuesta
+//.catch((err) => console.error('error', err)); //muestra error (en rojo) en consola con su respuesta

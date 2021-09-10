@@ -80,7 +80,7 @@ function secondCount2() {
     control = setInterval(secondCount2, 1000);
   }
 }
-var myVar;
+let myVar;
 const btnTryIt = document.querySelector('.js_btnTryIt');
 const btnStopIt = document.querySelector('.js_btnStopIt');
 function showAlert() {
