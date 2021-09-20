@@ -1,111 +1,216 @@
-import '../styles/App.scss';
 import { useState } from 'react';
 
 const App = () => {
-  const [name, setName] = useState('____');
+  // Estados del componente
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [region, setRegion] = useState('España peninsular');
+  const [paymentType, setPaymentType] = useState('');
+  const [legalTerms, setLegalTerms] = useState(false);
+
+  // Eventos
   const handleName = (ev) => {
-    if (ev.target.value !== '') {
-      setName(ev.target.value);
-    } else {
-      setName('____');
+    setName(ev.target.value);
+  };
+
+  const handleEmail = (ev) => {
+    setEmail(ev.target.value);
+  };
+
+  const handleRegion = (ev) => {
+    setRegion(ev.target.value);
+  };
+
+  const handlePaymentType = (ev) => {
+    setPaymentType(ev.target.value);
+  };
+
+  const handleLegalTerms = (ev) => {
+    // Como lo que nos interesa es si está activo o no, guardamos el checked
+    setLegalTerms(ev.target.checked);
+  };
+
+  const handleResetButton = () => {
+    // Ponemos los mismo valores que hemos usado arriba en los useState
+    setName('');
+    setEmail('');
+    setRegion('España peninsular');
+    setPaymentType('');
+    setLegalTerms(false);
+  };
+
+  const handleForm = (ev) => {
+    ev.preventDefault();
+    console.log('Enviando datos al servidor...');
+  };
+
+  // Funciones que nos ayudan a renderizar
+  const renderPaymentTypeText = () => {
+    if (paymentType === 'creditCard') {
+      return 'Tarjeta de crédito';
+    } else if (paymentType === 'cash') {
+      return 'Efectivo';
+    } else if (paymentType === 'cashOnDelivery') {
+      return 'Contra reembolso';
     }
   };
 
-  const [size, setSize] = useState('S');
-  const handleSize = (ev) => {
-    setSize(ev.target.value);
+  const isValidForm = () => {
+    // El formulario solo es válido cuando los inputs de tipo texto no estén vacíos, cuando se haya marcado una tipo de pago y cuando los términos legales sean true
+    // También podríamos comprobar que el email tiene el formato correcto, pero no queremos complicar este ejemplo
+    if (
+      name !== '' &&
+      email !== '' &&
+      paymentType !== '' &&
+      legalTerms === true
+    ) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
-  const [giftWrap, setGiftWrap] = useState(false);
-  const handleGiftWrap = (ev) => {
-    setGiftWrap(ev.target.checked);
-  };
-
-  const [size2, setSize2] = useState('');
-  const handleSize2 = (ev) => {
-    setSize2(ev.target.value);
-  };
-
-  const handleSubmit = (ev) => {
-    debugger;
-    ev.preventDefault();
-    // Aquí enviamos los datos al servidor con un fetch o lo que sea
-  };
   return (
     <div>
-      <header>
-        <h1 className="title">Formularios en React</h1>
-      </header>
-      <main>
-        <form onSubmit={handleSubmit}>
-          <fieldset>
-            <label htmlFor="name">Escribe un nombre: </label>
-            <input
-              type="name"
-              name="name"
-              id="name"
-              placeholder="María García"
-              onChange={handleName}
-            />
-            <p>Tu nombre es: {name}</p>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="size">Selecciona tu talla de camiseta:</label>
-            <select name="size" id="size" onChange={handleSize}>
-              <option>S</option>
-              <option>M</option>
-              <option>L</option>
-            </select>
-            <p>Tu talla de camiseta es: {size}.</p>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="giftWrap">
-              ¿Quieres envolver para regalo tu compra?
+      <form className="form" onSubmit={handleForm}>
+        <h2>Rellena tus datos para finalizar la compra:</h2>
+        <div className="form">
+          {/* name */}
+          <label className="label-text" htmlFor="name">
+            Escribe un nombre:
+          </label>
+          <input
+            className="input-text"
+            type="name"
+            name="name"
+            id="name"
+            placeholder="María García"
+            value={name}
+            onChange={handleName}
+          />
+
+          {/* email */}
+          <label className="label-text" htmlFor="email">
+            Escribe un email:
+          </label>
+          <input
+            className="input-text"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="mariagarcia@gmail.com"
+            value={email}
+            onChange={handleEmail}
+          />
+
+          {/* region */}
+          <label className="label-text" htmlFor="region">
+            Indica tu región:
+          </label>
+          <select
+            className="input-select"
+            name="region"
+            id="region"
+            value={region}
+            onChange={handleRegion}
+          >
+            <option>España peninsular</option>
+            <option>Islas Canarias</option>
+            <option>Islas Baleares</option>
+            <option>Ceuta</option>
+            <option>Melilla</option>
+          </select>
+
+          {/* payment type */}
+          <label className="label-text">Indica tu método de pago:</label>
+
+          <div className="input-group-radio">
+            <label className="label-radio" htmlFor="creditCard">
+              Tarjeta de crédito
             </label>
-            <input
-              type="checkbox"
-              name="gitWrap"
-              id="gitWrap"
-              onChange={handleGiftWrap}
-            />
-            <p>
-              {giftWrap === true ? 'OK,' : 'OK, entonces NO'} te lo envolveremos
-              para regalo
-            </p>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="size">Selecciona tu talla de camiseta:</label>
-            <label htmlFor="sizeS"> Talla S</label>
+            {/* Este radio solo debe aparecer activo cuando paymentType sea creditCard */}
             <input
               type="radio"
-              id="sizeS"
-              name="size"
-              value="la talla S"
-              onChange={handleSize2}
+              name="paymentType"
+              id="creditCard"
+              value="creditCard"
+              checked={paymentType === 'creditCard'}
+              onChange={handlePaymentType}
             />
-            <label htmlFor="sizeM"> Talla M</label>
+          </div>
+
+          <div className="input-group-radio">
+            <label className="label-radio" htmlFor="cash">
+              Efectivo
+            </label>
+            {/* Este radio solo debe aparecer activo cuando paymentType sea cash */}
             <input
               type="radio"
-              id="sizeM"
-              name="size"
-              value="la talla M"
-              onChange={handleSize2}
+              name="paymentType"
+              id="cash"
+              value="cash"
+              checked={paymentType === 'cash'}
+              onChange={handlePaymentType}
             />
-            <label htmlFor="sizeL"> Talla L</label>
+          </div>
+
+          <div className="input-group-radio">
+            <label className="label-radio" htmlFor="cashOnDelivery">
+              Contra reembolso
+            </label>
+            {/* Este radio solo debe aparecer activo cuando paymentType sea cashOnDelivery */}
             <input
               type="radio"
-              id="sizeL"
-              name="size"
-              value="la talla L"
-              onChange={handleSize2}
+              name="paymentType"
+              id="cashOnDelivery"
+              value="cashOnDelivery"
+              checked={paymentType === 'cashOnDelivery'}
+              onChange={handlePaymentType}
             />
-            <p>Tu talla de camiseta es: {size2}</p>
-          </fieldset>
-          <fieldset>
-            <input type="submit" value="Enviar" />
-          </fieldset>
-        </form>
-      </main>
+          </div>
+
+          {/* legal terms */}
+          <label className="label-check" htmlFor="legalTerms">
+            Debes aceptar nuestros términos legales para completar la compra:
+          </label>
+          {/* Este radio solo debe aparecer activo cuando legalTerms sea true */}
+          <input
+            type="checkbox"
+            name="legalTerms"
+            id="legalTerms"
+            checked={legalTerms}
+            onChange={handleLegalTerms}
+          />
+        </div>
+
+        <div className="preview">
+          <h2>Tus datos son:</h2>
+          <ul>
+            <li>Nombre: {name}</li>
+            <li>Email: {email}</li>
+            <li>Región: {region}</li>
+            <li>Método de pago: {renderPaymentTypeText()}</li>
+            <li>
+              Has aceptado nuestros términos legales:{' '}
+              {legalTerms === true ? 'Sí' : 'No'}
+            </li>
+          </ul>
+        </div>
+
+        {/* reset */}
+        {/* Este botón debe estar inhabilitado mientras el formulario no sea válido */}
+        <input
+          className="button"
+          type="submit"
+          value="Enviar"
+          disabled={isValidForm() === false}
+        />
+
+        {/* send */}
+        <button className="button reset" onClick={handleResetButton}>
+          Limpiar el formulario
+        </button>
+      </form>
     </div>
   );
 };
