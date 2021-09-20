@@ -1,5 +1,5 @@
-import '../styles/App.scss';
 import { useState } from 'react'; // Importamos useState desde React porque lo vamos a necesitar más abajo
+import '../styles/App.scss';
 
 const App = () => {
   const [email, setEmail] = useState('');
