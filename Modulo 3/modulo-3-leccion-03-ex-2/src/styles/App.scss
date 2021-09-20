@@ -5,9 +5,18 @@
 }
 
 header {
+  margin-bottom: 10px;
   background-image: url('../images/header-background.png');
 }
 .title {
   color: white;
   text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+small {
+  background-color: grey;
+  color: greenyellow;
 }
