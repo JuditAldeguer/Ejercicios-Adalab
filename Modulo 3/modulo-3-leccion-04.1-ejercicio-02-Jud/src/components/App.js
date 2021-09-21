@@ -10,18 +10,12 @@ function App() {
       completed: false,
     },
   ];
-  function isDone(taskEl) {
-    if (taskEl.completed) {
-      return 'done';
-    } else {
-      return '';
-    }
-  }
+
   const renderTasks = () => {
     return tasks.map((taskEl, index) => {
       console.log(taskEl);
       return (
-        <li key={index} className={isDone(taskEl)}>
+        <li key={index} className={taskEl.completed === true ? 'done' : ''}>
           {taskEl.task}
         </li>
       );
