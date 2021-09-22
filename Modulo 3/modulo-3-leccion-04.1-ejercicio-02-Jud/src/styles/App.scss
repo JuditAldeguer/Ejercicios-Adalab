@@ -6,12 +6,18 @@
 header {
   background-image: url('../images/header-background.png');
   margin-bottom: 10px;
-}
-.title {
-  color: white;
-  text-align: center;
+  .title {
+    color: white;
+    text-align: center;
+  }
 }
 
-.done {
-  text-decoration: line-through;
+main {
+  padding: 10px;
+  .done {
+    text-decoration: line-through;
+  }
+  input {
+    margin: 10px;
+  }
 }
