@@ -6,7 +6,9 @@ function App() {
   const [tasks, setTasks] = useState(tasksData); //mueve datos de file a state
   const handleClick = (ev) => {
     console.log(ev.currentTarget);
-    const clickedEl = tasks.find((task) => (task.id = ev.currentTarget.id));
+    const clickedEl = tasks.find(
+      (task) => task.id === parseInt(ev.currentTarget.id)
+    );
     console.log(clickedEl);
     clickedEl.completed = !clickedEl.completed;
     setTasks([...tasks]); //se actualizan datos en el use state
