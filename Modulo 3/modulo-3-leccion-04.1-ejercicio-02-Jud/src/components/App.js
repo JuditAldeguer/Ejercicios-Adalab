@@ -1,21 +1,26 @@
 import '../styles/App.scss';
+import { useState } from 'react';
+import tasksData from '../data.json'; //importa de otro file
 
 function App() {
-  const tasks = [
-    { task: 'Comprar harina, jamón y pan rallado', completed: true },
-    { task: 'Hacer croquetas ricas', completed: true },
-    { task: 'Ir a la puerta de un gimnasio', completed: false },
-    {
-      task: 'Comerme las croquetas mirando a la gente que entra en el gimnasio',
-      completed: false,
-    },
-  ];
-
+  const [tasks, setTasks] = useState(tasksData); //mueve datos de file a state
+  const handleClick = (ev) => {
+    console.log(ev.currentTarget);
+    const clickedEl = tasks.find((task) => (task.id = ev.currentTarget.id));
+    console.log(clickedEl);
+    clickedEl.completed = !clickedEl.completed;
+    setTasks([...tasks]); //se actualizan datos en el use state
+  };
   const renderTasks = () => {
-    return tasks.map((taskEl, index) => {
-      console.log(taskEl);
+    return tasks.map((taskEl, i) => {
+      taskEl.id = i; //añado id a State
       return (
-        <li key={index} className={taskEl.completed === true ? 'done' : ''}>
+        <li
+          key={i}
+          id={i}
+          onClick={handleClick}
+          className={taskEl.completed === true ? 'done' : ''}
+        >
           {taskEl.task}
         </li>
       );
