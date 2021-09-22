@@ -1,4 +1,7 @@
 import '../styles/App.scss';
+import { useEffect, useState } from 'react';
+import callToApi from '../services/api';
+import ls from '../services/local-storage.js'; //localStorage
 
 function App() {
   return (
