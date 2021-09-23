@@ -1,7 +1,7 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
-import callToApiTwo from '../services/api2';
-import callToApi from '../services/api';
+// import callToApiTwo from '../services/api2';
+import { callToApi, callToApiTwo } from '../services/api';
 import ls from '../services/local-storage.js'; //localStorage
 
 function App() {
