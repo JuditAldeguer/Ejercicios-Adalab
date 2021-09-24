@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-image: url('../images/header-background.png');
+}
+.title {
+  color: white;
+  text-align: center;
+}
+
+ol {
+  counter-reset: item;
+}
+li {
+  display: block;
+  color: #666666;
+}
+li:before {
+  content: counters(item, '.') ' ';
+  counter-increment: item;
+}
+// https://www.w3docs.com/snippets/html/how-to-display-an-ordered-list-with-nested-counters.html

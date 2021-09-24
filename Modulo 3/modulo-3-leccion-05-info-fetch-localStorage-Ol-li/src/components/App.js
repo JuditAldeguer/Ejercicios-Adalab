@@ -1,7 +1,7 @@
 import '../styles/App.scss';
 import { useEffect, useState } from 'react';
 // import callToApiTwo from '../services/api2';
-import { callToApi, callToApiTwo } from '../services/api';
+import { callToApi, callToApiTwo } from '../services/api.js';
 import ls from '../services/local-storage.js'; //localStorage
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
     });
   }, []); // Ponemos un array vacío para que se llame al API solo la primera vez
   useEffect(() => {
-    // Aquí podemos poner código JS, por ejemplo podríamos llamar a callToApi dentro de un if
+    // es posible poner código JS, p.ej. llamar a callToApi dentro de un if
     callToApiTwo(searchName).then((response) => {
       // Cuando el API responde guardamos los personajes en el estado
       setCharacters(response);

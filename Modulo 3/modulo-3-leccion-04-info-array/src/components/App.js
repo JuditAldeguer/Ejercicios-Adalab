@@ -45,6 +45,7 @@ const App = () => {
         })
         // Filtramos por favorito
         .filter((serie) => {
+          debugger;
           if (searchIsFavorite === true) {
             return serie.isFavorite === true;
           } else {
