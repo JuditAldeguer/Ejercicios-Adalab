@@ -7,7 +7,7 @@ const ButtonBlue = (props) => {
   const typeClassName =
     props.type === undefined ? '' : `button-type-${props.type}`;
 
-  // Usamos typeClassName para añadir otra clase al botón
+  //Con typeClassName para añadir otra clase al botón y usamos sus otras props
   return (
     <button className={`bg_blue ${typeClassName}`} title={props.title}>
       {props.text}
