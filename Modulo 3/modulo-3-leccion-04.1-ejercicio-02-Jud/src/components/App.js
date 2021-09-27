@@ -1,13 +1,13 @@
 import '../styles/App.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import tasksData from '../data.json'; //importa de otro file
 
 function App() {
   //STATES----------------------------------------------------------
   const [tasks, setTasks] = useState(tasksData); //mueve datos de file a state
   const [searchTask, setSearchTask] = useState('');
-  const [numList, setNumList] = useState(0);
-  const [numCompleted, setNumCompleted] = useState(0);
+  const [numList, setNumList] = useState(4);
+  const [numCompleted, setNumCompleted] = useState(2);
 
   //FUNCTION---------------------------------------------------------
   const handleClick = (ev) => {
@@ -46,15 +46,18 @@ function App() {
   };
 
   // //da error---------------
-  const handleNumCompleted = () => {
-    //donde llamo a esta función???????????????????????????????????????
-    for (let i = 0; i < tasks.length; i++) {
-      setNumList(i + 1); //añadir num li a State
-    }
-    const completedTask = tasks.find((taskEl) => taskEl.completed === true);
-    const completedNum = completedTask.key + 1;
-    setNumCompleted(completedNum);
-  };
+  useEffect(() => {
+    const handleNumCompleted = () => {
+      //donde llamo a esta función???????????????????????????????????????
+      for (let i = 0; i < tasks.length; i++) {
+        setNumList(i + 1); //añadir num li a State
+      }
+      const completedTask = tasks.find((taskEl) => taskEl.completed === true);
+      const completedNum = completedTask.key + 1;
+      setNumCompleted(completedNum);
+    };
+  }, [tasks]);
+  const incompleted = parseInt(numList) - parseInt(numCompleted);
 
   //HTML-----------------------------------------------------------------------
   return (
@@ -74,8 +77,8 @@ function App() {
         />
         <ul>
           <li>Tareas totales: {numList}</li>
-          <li>Tareas completadas: 2 {/* {numCompleted} */}</li>
-          <li>Tareas pendientes: 3 {/* {numList - numCompleted}*/}</li>
+          <li>Tareas completadas: 2 {numCompleted} </li>
+          <li>Tareas pendientes: 3 {incompleted}</li>
         </ul>
       </main>
     </div>
