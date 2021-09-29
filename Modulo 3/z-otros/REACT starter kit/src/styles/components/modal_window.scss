@@ -1,0 +1,28 @@
+.modal_window {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  height: 50vh;
+  width: 50vw;
+  transition: all 0.5s;
+  text-align: center;
+  .buttonX {
+    float: right;
+  }
+  .cursiva {
+    font-style: italic;
+  }
+  h2 {
+    padding: 1rem;
+  }
+  p {
+    padding: 1rem;
+  }
+}
+
+#hidden {
+  height: 0px;
+  display: none;
+}

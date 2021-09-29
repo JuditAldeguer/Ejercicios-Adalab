@@ -1,15 +1,20 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+//Styles
+import '../../styles/components/links.scss';
 
 const Links = (props) => {
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/">Ir al inicio</Link>
+          <NavLink to="/" title="inicio" activeClassName="selected-link">
+            Ir al inicio
+          </NavLink>
         </li>
         <li>
           <NavLink
             to={`/product-detail/${props.productId}`}
+            title="producto"
             activeClassName="selected-link"
           >
             Ir al Producto
