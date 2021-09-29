@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-image: url('../images/header-background.png');
+}
+.title {
+  color: white;
+  text-align: center;
+}
+
+.selectedLink {
+  color: yellow;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+section {
+  border: yellowgreen 2px solid;
+}
