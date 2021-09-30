@@ -31,9 +31,9 @@ const callToApiTwo = (searchName) => {
     });
 };
 
-const objectToExport = {
-  callToApi: callToApi,
-  callToApiTwo: callToApiTwo,
-};
+// const objectToExport = {
+//   callToApi: callToApi,
+//   callToApiTwo: callToApiTwo,
+// };
 
-export default objectToExport;
+export { callToApi, callToApiTwo };
