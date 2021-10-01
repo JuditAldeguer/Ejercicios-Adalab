@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 //Services
 import callToApi from '../services/api';
 import ls from '../services/local-storage.js'; //localStorage
+import date from '../services/date'; //fecha usamos date: date.getCurrentDate()
 //Styles
 import '../styles/App.scss';
 //Components
