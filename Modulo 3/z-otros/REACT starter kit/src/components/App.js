@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { v4 as uuid } from 'uuid'; // al generar id={uuid()}
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 //Services
