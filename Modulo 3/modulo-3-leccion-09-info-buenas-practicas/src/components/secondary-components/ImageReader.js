@@ -12,7 +12,6 @@ const ImageReader = (props) => {
     // Si la usuaria ha seleccionado al menos una imagen selectedFile es diferente de undefined
     if (selectedFile) {
       // Por curiosidad mira lo que contiene la constante selectedFile
-      console.log(selectedFile);
       setFileSize(selectedFile.size);
       setFileType(selectedFile.type);
       // Le decimos al lector de ficheros que lea el fichero seleccionado por la usuaria
@@ -27,13 +26,12 @@ const ImageReader = (props) => {
     props.handleImage(fileReader.result);
     // Hacemos lifting
   };
-  const image = props.data.image;
-  console.log('url', image);
+
   // Escuchamos el evento load de fileReader y cuando se lance lo manejamos con la función getImage
   fileReader.addEventListener('load', getImage);
 
   return (
-    <div>
+    <>
       <label>
         Selecciona una imagen por favor:
         {/* Usamos fileElement como referencia de este input */}
@@ -47,7 +45,7 @@ const ImageReader = (props) => {
 
       <p>El tamaño de la imagen es: {fileSize} bytes.</p>
       <p>El tipo de la imagen es: {fileType}.</p>
-    </div>
+    </>
   );
 };
 

@@ -16,15 +16,30 @@ import ImageReader from './secondary-components/ImageReader';
 function App() {
   const routeData = useRouteMatch('/product-detail/:id');
   const productId = routeData !== null ? routeData.params.productId : '';
-  const [name, SetName] = useState('Jud');
+  const [name, setName] = useState('Jud');
+  const [image, setImage] = useState('');
   const handleChange = (result) => {
     if (result.name === 'name') {
-      SetName(result.value);
+      setName(result.value);
     }
   };
 
   const handleImage = (imageData) => {
-    console.log(imageData);
+    if (imageData) {
+      setImage(imageData);
+      // return <img src={image} alt="hey" />;
+      // return <div style={backgroundImage:imageData } > </div>;
+    } //else {
+    //   return null;
+    // }
+  };
+  const paintImage = () => {
+    console.log('inside');
+    if (image !== '') {
+      return <img src={image} alt="hey" />;
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -36,23 +51,22 @@ function App() {
           <div>
             <h1>Bienvenida a la pagina de inicio</h1>
             <p>Catálogo</p>
+            <Input
+              labelText={'Texto del Input '}
+              inputName={'name'}
+              handleChange={handleChange}
+            />
+            <ImageReader handleImage={handleImage} />
             <p>
               <strong>Mi nombre es asda </strong>
               {name}
             </p>
+            {paintImage()}
           </div>
-
-          {/* <Input
-            labelText={'Texto del Input '}
-            inputName={'name'}
-            handleChange={handleChange}
-          /> */}
-          {/* <ImageReader handleImage={handleImage} /> */}
-
-          {/* <img src="imageData" alt="product" /> */}
         </Route>
         <Route path="/product-detail/">
           <ProductDetail productId={productId} />
+          <p>Detalle ruta</p>
         </Route>
         <Route>
           <NotFoundPage />
