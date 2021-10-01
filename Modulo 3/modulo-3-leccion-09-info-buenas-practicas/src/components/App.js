@@ -11,6 +11,7 @@ import Footer from './Footer';
 import ProductDetail from './secondary-components/ProductDetail';
 import NotFoundPage from './secondary-components/NotFoundPage';
 import Input from './secondary-components/Input';
+import ImageReader from './secondary-components/ImageReader';
 
 function App() {
   const routeData = useRouteMatch('/product-detail/:id');
@@ -22,23 +23,33 @@ function App() {
     }
   };
 
+  const handleImage = (imageData) => {
+    console.log(imageData);
+  };
+
   return (
     <div className="page">
       <Header productId="321" />{' '}
       {/* pendiente introducir numero id con find() tras callToApi */}
       <Switch>
         <Route path="/" exact>
-          <h1>Bienvenida a la pagina de inicio</h1>
-          <p>Catálogo</p>
-          <Input
+          <div>
+            <h1>Bienvenida a la pagina de inicio</h1>
+            <p>Catálogo</p>
+            <p>
+              <strong>Mi nombre es asda </strong>
+              {name}
+            </p>
+          </div>
+
+          {/* <Input
             labelText={'Texto del Input '}
             inputName={'name'}
             handleChange={handleChange}
-          />
-          <p>
-            <strong>Mi nombre es </strong>
-            {name}
-          </p>
+          /> */}
+          {/* <ImageReader handleImage={handleImage} /> */}
+
+          {/* <img src="imageData" alt="product" /> */}
         </Route>
         <Route path="/product-detail/">
           <ProductDetail productId={productId} />
