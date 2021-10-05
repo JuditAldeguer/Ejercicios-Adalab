@@ -1,19 +1,25 @@
-// Fichero src/services/api.js
+// info en https://rickandmortyapi.com/documentation/#get-all-characters --> https://rickandmortyapi.com/api/character or '//raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json'
+
 const callToApi = () => {
-  // Llamamos al API
-  return fetch('https://swapi.dev/api/people/5')
+  return fetch('//rickandmortyapi.com/api/character')
     .then((response) => response.json())
     .then((response) => {
-      // Cuando responde el API podemos limpiar los datos aquí
-      const result = {
-        name: response.name,
-        birthYear: response.birth_year,
-        height: response.height,
-        mass: response.mass,
-        eyeColor: response.eye_color,
-      };
+      const result = response.results;
       return result;
     });
 };
 
-export default callToApi;
+const callToApiEpisodes = (numEpisode) => {
+  return fetch(`${numEpisode}`)
+    .then((response) => response.json())
+    .then((response) => {
+      const result = response.name;
+      return result;
+    });
+};
+
+const objectToExport = {
+  callToApi: callToApi,
+  callToApiEpisodes: callToApiEpisodes,
+};
+export default objectToExport;
