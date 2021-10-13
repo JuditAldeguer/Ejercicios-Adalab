@@ -58,3 +58,16 @@ app.get('/response-with-404-status-error', (req, res) => {
     errorMessage: 'Data not found',
   });
 });
+
+//errores comunes - responder más de 1 vez
+app.get('/new-user', (req, res) => {
+  console.log(`¿Has the response been sent? ${res.headersSent}`);
+  if (req.query.name === undefined) {
+    res.json({ result: 'invalid name' });
+  }
+
+  console.log(`¿Has the response been sent? ${res.headersSent}`);
+  if (req.query.email === undefined) {
+    res.json({ result: 'invalid email' });
+  }
+});
